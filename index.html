@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+
+    <div id="resultado"></div>
+
+    <script>
+        // Use different variable name for the function parameter
+        const calcular = (operator, num1, num2) => {
+            switch (operator) {
+                case '+':
+                    return num1 + num2;
+                case '-':
+                    return num1 - num2;
+                case '/':
+                    return num1 / num2;
+                case '*':
+                    return num1 * num2;
+                default:
+                    alert("Operador Inválido")
+            }
+        }
+
+        let operator = prompt("Escolha um desses operadores [+, -, /, *] ");
+        let number1 = parseFloat(prompt("Insira o primeiro número"));
+        let number2 = parseFloat(prompt("Insira o segundo número"));
+
+        // Use a different variable name for the result
+        let resultadoCalculo = calcular(operator, number1, number2);
+
+        // Use innerHTML to display the result in the HTML
+        document.getElementById("resultado").innerHTML = `Resultado: ${resultadoCalculo}`;
+    </script>
+</body>
+
+</html>
